@@ -69,12 +69,14 @@
 -(void)didTableView
 {
     NSInteger rowNumber = [self.documentTV clickedRow];
-    //    NSLog(@"Double Clicked.%ld ",rowNumber);
-//    [self showAlert:[NSString stringWithFormat:@"index = %ld \nkey =%@\nvalue = %@",rowNumber,[AnccDataManager allKey][rowNumber],[AnccDataManager valueForKey:[AnccDataManager allKey][rowNumber]]]];
+    if([AnccDataManager allKey].count<=rowNumber)
+    {
+        return;
+    }
     [self clearValue];
     self.keyTF.stringValue = [AnccDataManager allKey][rowNumber];
     self.valueTF.stringValue = [AnccDataManager valueForKey:[AnccDataManager allKey][rowNumber]];
-    self.descriptionTF.stringValue = @"";
+    self.descriptionTF.stringValue = [AnccDataManager descriptionForKey:[AnccDataManager allKey][rowNumber]];;
     [self.keyTF becomeFirstResponder];
 }
 
@@ -109,6 +111,7 @@
 //    NSLog(@"%@",NSStringFromSelector(_cmd));
     NSString *keyStr = self.keyTF.stringValue;
     NSString *valueStr = self.valueTF.stringValue;
+    NSString *descriptionStr = self.descriptionTF.stringValue;
     if(keyStr.length==0)
     {
         [self showAlert:@"key == nil"];
@@ -129,8 +132,10 @@
         [self showAlert:@"亲,有空格"];
         return;
     }
+    
+    descriptionStr=descriptionStr.length==0?@"":descriptionStr;
 
-    [AnccDataManager setString:valueStr forKey:keyStr];
+    [AnccDataManager setString:valueStr forKey:keyStr andDescription:descriptionStr];
     [self clearValue];
     [self reloadScrollView];
     [self showAlert:@"添加成功"];

@@ -37,6 +37,7 @@
  *  @return -
  */
 +(NSString *)valueForKey:(NSString *)key;
++(NSString *)descriptionForKey:(NSString *)key;
 /**
  *  @author Anccccccc, 14-12-18 11:12:38
  *
@@ -45,7 +46,7 @@
  *  @param value -
  *  @param key   -
  */
-+(void)setString:(NSString *)value forKey:(NSString *)key;
++(void)setString:(NSString *)value forKey:(NSString *)key andDescription:(NSString *)description;
 /**
  *  @author Anccccccc, 14-12-18 11:12:54
  *

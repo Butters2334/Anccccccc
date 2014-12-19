@@ -7,66 +7,56 @@
 //
 
 #import "AnccDataManager.h"
+#import "YTKKeyValueStore.h"
 ///////////////////////////////////////////////////////////////////////////////////////////
-@interface AnccDataManager(data)
-//+ (instancetype)sharedInstance;
-//@property (nonatomic,strong)NSMutableDictionary *kvData;
-+(NSMutableDictionary *)kvData;
-@end
+#define DB_PATH [NSHomeDirectory() stringByAppendingPathComponent:@"Xcode_Plug_in.sqlite"]
+#define DB_TABLENAME @"user_ancc_key_value"
+///////////////////////////////////////////////////////////////////////////////////////////
 @implementation AnccDataManager
-//+ (instancetype)sharedInstance {
-//    static dispatch_once_t onceToken;
-//    static AnccDataManager *instance = nil;
-//    dispatch_once(&onceToken, ^{
-//        instance = [[AnccDataManager alloc] init];
-//    });
-//    return instance;
-//}
-
-//-(instancetype)init
-//{
-//    self = [super init];
-//    self.kvData = @{
-//                    @"key1":@"value1",
-//                    @"key2":@"value2",
-//                    @"key3":@"value3"}.mutableCopy;
-//    return self;
-//}
-+(NSMutableDictionary *)kvData
-{
-    static NSMutableDictionary *kv_data =nil;
-    if(kv_data==nil)
-    {
-        kv_data=@{@"key1":@"value1",
-                  @"key2":@"value2",
-                  @"key3":@"value3"}.mutableCopy;
-    }
-    return kv_data;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
 +(NSArray *)allKey
 {
-    return [self.kvData.allKeys sortedArrayUsingComparator:^(NSString * obj1, NSString * obj2){
+    YTKKeyValueStore *store= [[YTKKeyValueStore alloc]initWithDBWithPath:DB_PATH];
+    [store createTableWithName:DB_TABLENAME];
+    NSArray *array = [store getAllIdFromTable:DB_TABLENAME];
+    
+    return [array sortedArrayUsingComparator:^(NSString * obj1, NSString * obj2){
         return (NSComparisonResult)[obj1 compare:obj2 options:NSNumericSearch];
     }];
 }
+
 +(BOOL)containKey:(NSString *)key
 {
     return [[self allKey]containsObject:key];
 }
 +(NSString *)valueForKey:(NSString *)key
 {
-    return [self.kvData objectForKey:key];
+    YTKKeyValueStore *store= [[YTKKeyValueStore alloc]initWithDBWithPath:DB_PATH];
+    [store createTableWithName:DB_TABLENAME];
+    NSDictionary *json = [store getObjectById:key fromTable:DB_TABLENAME];
+    return json[@"value"];
 }
-+(void)setString:(NSString *)value forKey:(NSString *)key
++(NSString *)descriptionForKey:(NSString *)key
 {
-    [self.kvData setValue:value forKey:key];
+    YTKKeyValueStore *store= [[YTKKeyValueStore alloc]initWithDBWithPath:DB_PATH];
+    [store createTableWithName:DB_TABLENAME];
+    NSDictionary *json = [store getObjectById:key fromTable:DB_TABLENAME];
+    return json[@"description"];
+}
++(void)setString:(NSString *)value forKey:(NSString *)key andDescription:(NSString *)description
+{
+    key=key.length==0?@"":key;
+    value=value.length==0?@"":value;
+    description=description.length==0?@"":description;
+    NSDictionary *json = @{@"key":key,@"value":value,@"description":description};
+    YTKKeyValueStore *store= [[YTKKeyValueStore alloc]initWithDBWithPath:DB_PATH];
+    [store createTableWithName:DB_TABLENAME];
+    [store putObject:json withId:key intoTable:DB_TABLENAME];
 }
 +(void)removeStringForKey:(NSString *)key
 {
-    [self.kvData removeObjectForKey:key];
+    YTKKeyValueStore *store= [[YTKKeyValueStore alloc]initWithDBWithPath:DB_PATH];
+    [store createTableWithName:DB_TABLENAME];
+    [store deleteObjectById:key fromTable:DB_TABLENAME];
 }
 @end
 
