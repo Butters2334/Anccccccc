@@ -7,10 +7,8 @@
 //
 
 #import <AppKit/AppKit.h>
-
+//在info.plist中设置"Principal class"指向本类,作为处理主类
 @interface Anccccccc : NSObject
-
-+ (instancetype)sharedPlugin;
-
-@property (nonatomic, strong, readonly) NSBundle* bundle;
 @end
+
+

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21E0AA01A42713600BA2182 /* JTTTextResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E0A921A42713600BA2182 /* JTTTextResult.m */; };
+		A21E0AA11A42713600BA2182 /* NSString+JTTTextGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E0A941A42713600BA2182 /* NSString+JTTTextGetter.m */; };
+		A21E0AA21A42713600BA2182 /* NSTextView+JTTTextGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E0A961A42713600BA2182 /* NSTextView+JTTTextGetter.m */; };
+		A21E0AA31A42713600BA2182 /* JTTKeyboardEventSender.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E0A991A42713600BA2182 /* JTTKeyboardEventSender.m */; };
+		A21E0AAA1A4273AD00BA2182 /* AnccSettingWC.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E0AA81A4273AD00BA2182 /* AnccSettingWC.m */; };
+		A21E0AAB1A4273AD00BA2182 /* AnccSettingWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A21E0AA91A4273AD00BA2182 /* AnccSettingWC.xib */; };
+		A21E0AAE1A42759D00BA2182 /* AnccDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A21E0AAD1A42759D00BA2182 /* AnccDataManager.m */; };
 		A242867F1A4188AE00AABDF9 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A242867E1A4188AE00AABDF9 /* AppKit.framework */; };
 		A24286811A4188AE00AABDF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A24286801A4188AE00AABDF9 /* Foundation.framework */; };
 		A24286861A4188AE00AABDF9 /* Anccccccc.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = A24286851A4188AE00AABDF9 /* Anccccccc.xcscheme */; };
@@ -14,6 +21,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A21E0A911A42713600BA2182 /* JTTTextResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTTextResult.h; sourceTree = "<group>"; };
+		A21E0A921A42713600BA2182 /* JTTTextResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTTextResult.m; sourceTree = "<group>"; };
+		A21E0A931A42713600BA2182 /* NSString+JTTTextGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JTTTextGetter.h"; sourceTree = "<group>"; };
+		A21E0A941A42713600BA2182 /* NSString+JTTTextGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JTTTextGetter.m"; sourceTree = "<group>"; };
+		A21E0A951A42713600BA2182 /* NSTextView+JTTTextGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+JTTTextGetter.h"; sourceTree = "<group>"; };
+		A21E0A961A42713600BA2182 /* NSTextView+JTTTextGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+JTTTextGetter.m"; sourceTree = "<group>"; };
+		A21E0A981A42713600BA2182 /* JTTKeyboardEventSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTKeyboardEventSender.h; sourceTree = "<group>"; };
+		A21E0A991A42713600BA2182 /* JTTKeyboardEventSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTKeyboardEventSender.m; sourceTree = "<group>"; };
+		A21E0AA71A4273AD00BA2182 /* AnccSettingWC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnccSettingWC.h; sourceTree = "<group>"; };
+		A21E0AA81A4273AD00BA2182 /* AnccSettingWC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnccSettingWC.m; sourceTree = "<group>"; };
+		A21E0AA91A4273AD00BA2182 /* AnccSettingWC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnccSettingWC.xib; sourceTree = "<group>"; };
+		A21E0AAC1A42759D00BA2182 /* AnccDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnccDataManager.h; sourceTree = "<group>"; };
+		A21E0AAD1A42759D00BA2182 /* AnccDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnccDataManager.m; sourceTree = "<group>"; };
 		A242867B1A4188AE00AABDF9 /* Anccccccc.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Anccccccc.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		A242867E1A4188AE00AABDF9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		A24286801A4188AE00AABDF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -36,9 +56,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A21E0A8F1A42713600BA2182 /* JTTMagicLine */ = {
+			isa = PBXGroup;
+			children = (
+				A21E0A901A42713600BA2182 /* JTTCategory */,
+				A21E0A971A42713600BA2182 /* JTTKeyboard */,
+			);
+			path = JTTMagicLine;
+			sourceTree = "<group>";
+		};
+		A21E0A901A42713600BA2182 /* JTTCategory */ = {
+			isa = PBXGroup;
+			children = (
+				A21E0A911A42713600BA2182 /* JTTTextResult.h */,
+				A21E0A921A42713600BA2182 /* JTTTextResult.m */,
+				A21E0A931A42713600BA2182 /* NSString+JTTTextGetter.h */,
+				A21E0A941A42713600BA2182 /* NSString+JTTTextGetter.m */,
+				A21E0A951A42713600BA2182 /* NSTextView+JTTTextGetter.h */,
+				A21E0A961A42713600BA2182 /* NSTextView+JTTTextGetter.m */,
+			);
+			path = JTTCategory;
+			sourceTree = "<group>";
+		};
+		A21E0A971A42713600BA2182 /* JTTKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A21E0A981A42713600BA2182 /* JTTKeyboardEventSender.h */,
+				A21E0A991A42713600BA2182 /* JTTKeyboardEventSender.m */,
+			);
+			path = JTTKeyboard;
+			sourceTree = "<group>";
+		};
 		A24286721A4188AE00AABDF9 = {
 			isa = PBXGroup;
 			children = (
+				A21E0A8F1A42713600BA2182 /* JTTMagicLine */,
 				A24286821A4188AE00AABDF9 /* Anccccccc */,
 				A242867D1A4188AE00AABDF9 /* Frameworks */,
 				A242867C1A4188AE00AABDF9 /* Products */,
@@ -67,6 +119,11 @@
 			children = (
 				A24286871A4188AE00AABDF9 /* Anccccccc.h */,
 				A24286881A4188AF00AABDF9 /* Anccccccc.m */,
+				A21E0AA71A4273AD00BA2182 /* AnccSettingWC.h */,
+				A21E0AA81A4273AD00BA2182 /* AnccSettingWC.m */,
+				A21E0AA91A4273AD00BA2182 /* AnccSettingWC.xib */,
+				A21E0AAC1A42759D00BA2182 /* AnccDataManager.h */,
+				A21E0AAD1A42759D00BA2182 /* AnccDataManager.m */,
 				A24286831A4188AE00AABDF9 /* Supporting Files */,
 			);
 			path = Anccccccc;
@@ -137,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21E0AAB1A4273AD00BA2182 /* AnccSettingWC.xib in Resources */,
 				A24286861A4188AE00AABDF9 /* Anccccccc.xcscheme in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,7 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21E0AA11A42713600BA2182 /* NSString+JTTTextGetter.m in Sources */,
+				A21E0AA31A42713600BA2182 /* JTTKeyboardEventSender.m in Sources */,
+				A21E0AA01A42713600BA2182 /* JTTTextResult.m in Sources */,
+				A21E0AAE1A42759D00BA2182 /* AnccDataManager.m in Sources */,
 				A24286891A4188AF00AABDF9 /* Anccccccc.m in Sources */,
+				A21E0AA21A42713600BA2182 /* NSTextView+JTTTextGetter.m in Sources */,
+				A21E0AAA1A4273AD00BA2182 /* AnccSettingWC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +335,7 @@
 				A242868E1A4188AF00AABDF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
